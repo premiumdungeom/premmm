@@ -18,6 +18,35 @@ body {
   background-color: #0a0a1a;
 }
 
+.home-button {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #00fffc;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 8px 12px;
+  border-radius: 6px;
+  background: rgba(0, 255, 252, 0.1);
+  border: 1px solid rgba(0, 255, 252, 0.3);
+  transition: all 0.3s;
+  z-index: 100;
+}
+
+.home-button:hover {
+  background: rgba(0, 255, 252, 0.2);
+  transform: translateY(-2px);
+}
+
+.home-button svg {
+  width: 16px;
+  height: 16px;
+}
+
 .container {
   text-align: center;
   padding: 25px;
@@ -272,105 +301,6 @@ button:hover::before {
   font-size: 12px;
   text-shadow: 0 0 5px #ff00f780;
   letter-spacing: 1px;
-}
-
-.home-button {
-  position: absolute;
-  top: 15px;
-  left: 15px;
-  background: rgba(0, 255, 252, 0.2);
-  color: #00fffc;
-  border: 1px solid #00fffc;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  font-size: 18px;
-  transition: all 0.3s;
-  z-index: 10;
-}
-
-.home-button:hover {
-  background: rgba(0, 255, 252, 0.4);
-  transform: scale(1.1);
-  box-shadow: 0 0 10px #00fffc;
-}
-
-.info-box {
-  background: rgba(0, 20, 40, 0.7);
-  border: 1px solid #00aaff;
-  border-radius: 8px;
-  padding: 12px;
-  margin: 10px 0;
-  font-size: 13px;
-  line-height: 1.4;
-  text-align: center;
-  color: #aaffff;
-}
-
-.promo-box {
-  margin-top: 25px;
-  background: rgba(10, 10, 26, 0.7);
-  border: 1px solid #ff00f7;
-  border-radius: 8px;
-  padding: 15px;
-  width: 100%;
-}
-
-.promo-box h3 {
-  color: #ff00f7;
-  margin: 0 0 10px 0;
-  font-size: 16px;
-  text-align: center;
-  text-shadow: 0 0 5px #ff00f780;
-}
-
-.promo-items {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.promo-item {
-  background: rgba(255, 0, 247, 0.1);
-  border: 1px solid #ff00f7;
-  border-radius: 6px;
-  padding: 8px;
-  text-align: center;
-  color: #ffccff;
-  text-decoration: none;
-  transition: all 0.3s;
-  font-size: 14px;
-}
-
-.promo-item:hover {
-  background: rgba(255, 0, 247, 0.3);
-  color: white;
-  transform: translateY(-2px);
-  box-shadow: 0 0 10px #ff00f780;
-}
-
-.donate-btn {
-  background: linear-gradient(135deg, #ff00f7 0%, #ff9900 100%);
-  color: #0a0a1a;
-  border: none;
-  padding: 12px 24px;
-  font-size: 14px;
-  font-weight: bold;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: all 0.3s;
-  margin-top: 20px;
-  width: 100%;
-  box-shadow: 0 0 10px #ff00f780;
-}
-
-.donate-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 0 20px #ff00f7, 0 0 30px #ff00f780;
 }
 
 /* Add these Google Fonts to your HTML head */
