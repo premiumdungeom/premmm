@@ -65,16 +65,22 @@ function updateStatsDisplay() {
 // Main verification handler
 async function handleVerification() {
   const verifyBtn = document.getElementById("verifyBtn");
-  if (verifyBtn) verifyBtn.disabled = true;
+  if (verifyBtn) {
+    verifyBtn.disabled = true;
+    verifyBtn.innerHTML = "⏳ Processing...";
+  }
 
   const userId = tg.initDataUnsafe?.user?.id;
   if (!userId) {
-    showMessage("❌ Telegram session invalid");
-    if (verifyBtn) verifyBtn.disabled = false;
+    showMessage("❌ Please open this through Telegram to verify");
+    if (verifyBtn) {
+      verifyBtn.disabled = false;
+      verifyBtn.innerHTML = "🔒 Verify My Humanity";
+    }
     return;
   }
 
-  showMessage("🔍 Running security checks...");
+  showMessage("🔍 Running advanced security checks...\nThis may take a few moments")
 
   try {
     const fingerprint = await getFingerprint();
@@ -146,11 +152,13 @@ async function handleVerification() {
     // Refresh stats after verification
     await loadStats();
 
-    if (data.flags.vpn || data.flags.multi_account) {
-      showMessage(data.flags.vpn ? "⚠️ VPN Detected" : "⚠️ Suspicious Activity");
-    } else {
-      showMessage("✅ Verification Complete");
-    }
+    if (data.flags.vpn) {
+    showMessage("⚠️ VPN/Proxy Detected\nFor security reasons, please disable it");
+  } else if (data.flags.multi_account) {
+    showMessage("⚠️ Suspicious Activity Detected\nPlease contact support");
+  } else {
+    showMessage("✅ Verification Successful!\nThank you for your patience");
+  }
 
   } catch (err) {
     console.error("Verification error:", err);
