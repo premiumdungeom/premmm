@@ -367,22 +367,143 @@ else:
 
 <style>
   .code-container {
+<section class="setup-guide">
+  <div class="container">
+    <h2 style="text-align: center; margin-bottom: 40px; color: var(--primary);">How To Setup</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-number">1</div>
+        <div>
+          <h3>Add to Your Group</h3>
+          <p>Add this code to your Telegram bot to prevent multiple accounts:</p>
+          
+          <div class="code-container">
+            <div class="code-header">
+              <span>Prevent Multiple Accounts</span>
+              <button class="copy-btn" onclick="copyCode('code1')">Copy</button>
+            </div>
+            <pre id="code1" class="code-block"><code class="language-python">def check():
+    channels = ['@yourchannels']
+    for i in channels:
+        check = bot.getChatMember(str(i), u)
+        if check.status != 'left': pass
+        else: return False
+    return True
+
+if check() == True:
+    verify = User.getData("love")
+    if verify is None:
+        webhook = libs.Webhook.getUrlFor(command="/trackandcheck", user_id=u)
+        webPage = "https://premium-security.onrender.com/?webhook="+str(encodeURIComponent(webhook))
+        keys = [[InlineKeyboardButton(text='➡️ Verify Now', web_app=webPage)]]
+        button = InlineKeyboardMarkup(keys)
+        if message.from_user.username == None:
+            bot.sendMessage("your account doesn't have username 🤔\n\nYou cant USE THIS BOT UNTIL YOU SET YOUR TELEGRAM USERNAME.")
+        else:
+            bot.sendMessage("✅ MULTIPLE ACCOUNTS GET AUTOMATIC BAN ASAP...\n\nVERIFY YOUR SELF 🥰", reply_markup=button)
+    else:
+        stats = libs.Resources.globalRes('users')
+        keyboard = ReplyKeyboardMarkup(True)
+        keyboard.row("DASHBOARD")
+        keyboard.row("CLAIM AIRTIME","SET NUMBER")
+        
+        come = User.getData("flow")
+        if come == None:
+            stats.add(1)
+            krap = User.getData("Upline")
+            if krap == "None":
+                bot.replyText(chat_id=message.chat.id, text="🔥", reply_markup=keyboard, parse_mode="markdown")
+                User.saveData("flow", "given")
+            else:
+                TR = libs.Resources.globalRes(verify)
+                if TR.value() > 2:
+                    Bot.sendMessage("MULTIPLE ACCOUNTS DETECTED")
+                else:
+                    res = libs.Resources.anotherRes("balanc",krap)
+                    referral_bonus = Bot.getData("bonus")
+                    solve = float(referral_bonus)
+                    res.add(solve)
+                    stats.add(1)
+                    inv = libs.Resources.anotherRes("@hibeejay52100k",krap)
+                    inv.add(1)
+                    User.saveData("flow", "given")
+                    bot.replyText(chat_id=message.chat.id, text="TON BAG", reply_markup=keyboard, parse_mode="markdown")
+        else:
+            bot.replyText(chat_id=message.chat.id, text="TON BAGi", reply_markup=keyboard, parse_mode="markdown")
+            User.saveData("flow", "given")
+else:
+    bot.replyText(u, "*❌ You need to join our channels First.*", parse_mode="markdown")</code></pre>
+          </div>
+        </div>
+      </div>
+      
+      <div class="step">
+        <div class="step-number">2</div>
+        <div>
+          <h3>Add Verification Handler</h3>
+          <p>Add this command handler for the verification response:</p>
+          
+          <div class="code-container">
+            <div class="code-header">
+              <span>Verification Handler</span>
+              <button class="copy-btn" onclick="copyCode('code2')">Copy</button>
+            </div>
+            <pre id="code2" class="code-block"><code class="language-python">if options == None:
+    bot.replyText(u, "❌ Not Allowed", parse_mode="Markdown")
+else:
+    data = bunchify(options.json)
+    ip = data.verification_data.ip
+    fingerprint = data.verification_data.fingerprint
+    vpn = data.verification_data.flags.vpn
+    multiple = data.verification_data.flags.multi_account
+    ip_scratch = Bot.getData(ip)
+    check_ifok = User.getData("verify")
+    verify = User.getData("verify")
+    ip_finger = Bot.getData(fingerprint)
+    
+    tg = User.getData("love")
+    if tg: bot.sendMessage("ALREADY A USER")
+    else:
+        if ip_scratch: bot.sendMessage("ALREADY A USER")
+        else:
+            if ip_finger: bot.sendMessage("ALREADY A USER")
+            else:
+                bot.sendMessage("YOU ARE VERIFIED /start")
+                Bot.saveData(fingerprint,"yes")
+                TR = libs.Resources.globalRes(fingerprint)
+                TR.add(1)
+                Bot.saveData(ip,"yes")
+                User.saveData("love",fingerprint)</code></pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .code-container {
     background: rgba(10, 20, 30, 0.8);
     border-radius: 8px;
     border: 1px solid rgba(0, 255, 252, 0.2);
     margin: 15px 0;
     overflow: hidden;
+    max-height: 300px;
+    display: flex;
+    flex-direction: column;
   }
   
   .code-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 15px;
+    padding: 8px 12px;
     background: rgba(0, 20, 40, 0.6);
     border-bottom: 1px solid rgba(0, 255, 252, 0.1);
-    font-family: 'Courier New', monospace;
-    font-size: 14px;
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    position: sticky;
+    top: 0;
   }
   
   .copy-btn {
@@ -401,20 +522,34 @@ else:
   }
   
   .code-block {
-    padding: 15px;
+    padding: 12px;
     margin: 0;
-    overflow-x: auto;
-    font-family: 'Courier New', monospace;
-    font-size: 13px;
+    overflow-y: auto;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 12px;
     line-height: 1.4;
     color: #aaffff;
     tab-size: 2;
+    flex-grow: 1;
+    background: rgba(0, 10, 20, 0.5);
+  }
+  
+  .code-block code {
+    display: block;
+    white-space: pre;
+  }
+  
+  @media (max-width: 768px) {
+    .code-block {
+      font-size: 11px;
+      padding: 8px;
+    }
   }
 </style>
 
 <script>
   function copyCode(id) {
-    const code = document.getElementById(id);
+    const code = document.getElementById(id).querySelector('code');
     navigator.clipboard.writeText(code.textContent);
     
     const btn = event.target;
