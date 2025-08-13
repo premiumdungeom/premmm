@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Premium Dungeon - Home</title>
+  <style>
+    :root {
+      --primary: #00fffc;
+      --secondary: #ff00f7;
+      --dark: #0a0a1a;
+      --light: #e0e0e0;
+    }
+    
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--dark);
+      color: var(--light);
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    header {
+      padding: 40px 0;
+      border-bottom: 1px solid rgba(0, 255, 252, 0.1);
+    }
+    
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .logo {
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--primary);
+      text-decoration: none;
+    }
+    
+    .btn {
+      display: inline-block;
+      padding: 12px 24px;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+      color: var(--dark);
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: transform 0.3s;
+    }
+    
+    .btn:hover {
+      transform: translateY(-3px);
+    }
+    
+    .hero {
+      padding: 80px 0;
+      text-align: center;
+    }
+    
+    .hero h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    
+    .hero p {
+      font-size: 20px;
+      max-width: 700px;
+      margin: 0 auto 40px;
+      opacity: 0.9;
+    }
+    
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      padding: 60px 0;
+    }
+    
+    .feature-card {
+      background: rgba(20, 20, 40, 0.6);
+      border: 1px solid rgba(0, 255, 252, 0.1);
+      border-radius: 12px;
+      padding: 30px;
+      transition: transform 0.3s;
+    }
+    
+    .feature-card:hover {
+      transform: translateY(-10px);
+      border-color: var(--primary);
+    }
+    
+    .feature-card h3 {
+      color: var(--primary);
+      margin-top: 0;
+    }
+    
+    .setup-guide {
+      padding: 80px 0;
+      background: rgba(0, 10, 20, 0.3);
+      border-radius: 16px;
+      margin: 60px 0;
+    }
+    
+    .steps {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .step {
+      display: flex;
+      margin-bottom: 30px;
+      align-items: flex-start;
+    }
+    
+    .step-number {
+      background: var(--primary);
+      color: var(--dark);
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      margin-right: 20px;
+      flex-shrink: 0;
+    }
+    
+    footer {
+      padding: 40px 0;
+      text-align: center;
+      border-top: 1px solid rgba(0, 255, 252, 0.1);
+    }
+    
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin: 20px 0;
+    }
+    
+    .social-links a {
+      color: var(--light);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    
+    .social-links a:hover {
+      color: var(--primary);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <nav>
+        <a href="#" class="logo">𝔓𝔯𝔢𝔪𝔦𝔲𝔪 𝔇𝔲𝔫𝔤𝔢𝔬𝔫</a>
+        <a href="index.html" class="btn">Security Verification</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <h1>Advanced Security Protection</h1>
+      <p>Our verification system ensures only real users access your premium services while keeping bots and abusers out.</p>
+      <a href="index.html" class="btn">Start Verification</a>
+    </section>
+
+    <section class="features">
+      <div class="feature-card">
+        <h3>Bot Protection</h3>
+        <p>Advanced algorithms detect and block automated bots attempting to access your services.</p>
+      </div>
+      <div class="feature-card">
+        <h3>VPN Detection</h3>
+        <p>Identify users trying to mask their identity or location through proxy services.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Multi-Account Prevention</h3>
+        <p>Stop users from creating multiple accounts to bypass restrictions.</p>
+      </div>
+    </section>
+
+    <section class="container" style="padding: 80px 0;">
+  <h2 style="text-align: center; margin-bottom: 40px; color: var(--primary);">About Our Verification</h2>
+  <div style="max-width: 800px; margin: 0 auto;">
+    <div style="background: rgba(20, 20, 40, 0.6); border-radius: 12px; padding: 30px;">
+      <h3 style="color: var(--primary); margin-top: 0;">Why We Verify</h3>
+      <p>Our verification process helps ensure:</p>
+      <ul>
+        <li>Only real humans can access premium features</li>
+        <li>Bots and automated systems are blocked</li>
+        <li>Users aren't creating multiple accounts</li>
+        <li>Your community remains secure</li>
+      </ul>
+      
+      <h3 style="color: var(--primary); margin-top: 30px;">How It Works</h3>
+      <p>When you click "Verify My Humanity", our system:</p>
+      <ol>
+        <li>Checks your device fingerprint (no personal data collected)</li>
+        <li>Verifies your network connection</li>
+        <li>Analyzes behavior patterns</li>
+        <li>Returns a secure verification token</li>
+      </ol>
+      
+      <p style="margin-top: 30px; font-style: italic; opacity: 0.8;">
+        This process takes less than 5 seconds and only needs to be completed once per device.
+      </p>
+    </div>
+  </div>
+</section>
+
+    <section class="setup-guide">
+      <div class="container">
+        <h2 style="text-align: center; margin-bottom: 40px; color: var(--primary);">How To Setup</h2>
+        <div class="steps">
+          <div class="step">
+            <div class="step-number">1</div>
+            <div>
+              <h3>Add to Your Group</h3>
+              <p>Navigate to your Telegram group info screen and add our verification bot.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-number">2</div>
+            <div>
+              <h3>Configure Settings</h3>
+              <p>Customize your security preferences and verification requirements.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-number">3</div>
+            <div>
+              <h3>Enable Protection</h3>
+              <p>Activate the verification system to start screening new members.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="social-links">
+        <a href="https://t.me/premiumdungeon">Telegram</a>
+        <a href="https://twitter.com/premiumdungeon">Twitter</a>
+        <a href="mailto:iloveyou415150@gmail.com">Email</a>
+      </div>
+      <p>© 2023 Premium Dungeon. All rights reserved.</p>
+    </footer>
+  </div>
+</body>
+</html>
